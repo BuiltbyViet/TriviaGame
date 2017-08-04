@@ -82,9 +82,16 @@ var audiosounds4 = document.createElement("audio");
 
       
 
+var startSound = document.createElement("audio");
+startSound.setAttribute("src", "assets/css/OOT_PressStart.mp3");
+
 
 //Start button
-$("#start").on("click", displayQuestion1);
+$("#start").on("click", function(){
+  displayQuestion1();
+  startSound.play();
+});
+
 
 //counting down timer
     function countdown() {
@@ -108,7 +115,7 @@ $("#start").on("click", displayQuestion1);
     }
 
 
-//object with question
+//object with question & answers
 var nextQuestions= {
     question: [
   "Who is the main playable character in the Legend of Zelda series?",

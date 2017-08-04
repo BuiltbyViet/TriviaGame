@@ -10,7 +10,7 @@ font-size: 50px;
 
 body {
 	background-image:url(../images/legendofzelda.jpg);
-	background-size: 1284px 800px;
+	background-size: 1440px 870px;
 
 }
 #timer{
@@ -68,9 +68,11 @@ border: 3px solid black;
 
 #footer{
 	background-color: #171616;
-	margin-top: 40px;
-	padding: 10px;
+	margin-top: 82px;
+	
+	padding: 17px;
 	border-top-color: black;
+	
 	
 
 }
