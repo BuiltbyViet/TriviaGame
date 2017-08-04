@@ -1,0 +1,65 @@
+
+#heading{
+font-family: 'Sedgwick Ave Display', cursive;
+color: white;
+padding-top: 30px;
+background-color: black;
+font-size: 50px;
+}
+
+body {
+	background-image:url(../images/legendofzelda.jpg);
+	background-size: 1284px 800px;
+
+}
+#timer{
+color: orange;
+}
+
+#question{
+font-family: 'Archivo Narrow', sans-serif;
+font-size: 24px;
+}
+
+#container {
+color: white;
+margin-left: 130px;
+margin-top: 40px;
+background-image: url(../images/f8e33b25771f99230369564d38b62b3e--zelda-wallpaper-android-iphone--wallpaper.jpg);
+background-size: 400px 450px;
+width: 600px;
+height: 600px;
+text-align: center;
+opacity: 0.70;
+}
+
+
+
+#answer1:hover{
+	background-color: black;
+	font-style: bold;
+	cursor: pointer;
+	font-size: 20px;
+}
+
+#answer2:hover{
+	background-color: black;
+	font-style: bold;
+	cursor: pointer;
+	font-size: 20px;
+}
+
+#answer3:hover{
+	background-color: black;
+	font-style: bold;
+	cursor: pointer;
+	font-size: 20px;
+}
+
+#answer4:hover{
+	background-color: black;
+	font-style: bold;
+	cursor: pointer;
+	font-size: 20px;
+}
+
