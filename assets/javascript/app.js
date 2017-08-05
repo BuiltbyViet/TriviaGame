@@ -22,6 +22,7 @@ var audiosounds = document.createElement("audio");
       // Theme Button
       $("#play1").on("click", function() {
         audiosounds.play();
+        audiosounds.loop = true;
       });
 
       $("#pause").on("click", function() {
@@ -39,6 +40,7 @@ var audiosounds2 = document.createElement("audio");
       // Theme Button
       $("#play2").on("click", function() {
         audiosounds2.play();
+        audiosounds2.loop = true;
       });
 
      
@@ -49,6 +51,7 @@ var audiosounds3 = document.createElement("audio");
       // Theme Button
       $("#play3").on("click", function() {
         audiosounds3.play();
+        audiosounds3.loop = true;
       });
 
      
@@ -59,6 +62,7 @@ var audiosounds4 = document.createElement("audio");
 // Theme Button
       $("#play4").on("click", function() {
         audiosounds4.play();
+        audiosounds4.loop = true;
       });
 
 
@@ -69,6 +73,7 @@ var audiosounds5 = document.createElement("audio");
       // Theme Button
       $("#play5").on("click", function() {
         audiosounds5.play();
+        audiosounds5.loop = true;
       });
 
       
