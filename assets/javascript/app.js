@@ -79,8 +79,10 @@ startSound.setAttribute("src", "assets/css/OOT_PressStart.mp3");
 
 var selectSound = document.createElement("audio");
 selectSound.setAttribute("src","assets/css/OOT_MainMenu_Select.mp3");
-$(".answer").on("click", function(){ selectSound.play();
+function playSelectNoise(){
+  $(".answer").on("click", function(){ selectSound.play();
 });
+}
 
 //Start button
 $("#start").on("click", function(){
@@ -164,6 +166,7 @@ function displayQuestion1(){
   //for (var i=0; i<nextQuestions.question.length;i++)
   //{
     reset();
+    playSelectNoise();
     $("#instruction").html("");
   $("#question").html(nextQuestions.question[0]);
   $("#answer1").html(nextQuestions.answer[0][0]);
@@ -186,6 +189,7 @@ cancelQuestion1=  setTimeout(displayCorrectAnswerWhenIncorrect1, 25000);
 function displayCorrectAnswerWhenCorrect1(){
   stop();
 offClick();
+playSelectNoise();
 clearTimeout(cancelQuestion1);
 $("#rightOrWrong").html("You got the right answer!");
 correct++;
@@ -199,6 +203,7 @@ $("#comments").html("Yeah. He can't talk without a helper.");
 function displayCorrectAnswerWhenIncorrect1(){
   stop();
 offClick();
+playSelectNoise();
 clearTimeout(cancelQuestion1);
 $("#rightOrWrong").html("Sorry, the right answer is Link.");
 incorrect++;
@@ -234,7 +239,7 @@ cancelQuestion2=  setTimeout(displayCorrectAnswerWhenIncorrect2, 25000);
 function displayCorrectAnswerWhenCorrect2(){
   stop();
 offClick();
-
+playSelectNoise();
 clearTimeout(cancelQuestion2);
 $("#rightOrWrong").html("You got the right answer!");
 correct++;
@@ -247,6 +252,7 @@ $("#comments").html("Run like the wind!!!!!!");
 function displayCorrectAnswerWhenIncorrect2(){
   stop();
   offClick();
+  playSelectNoise();
 clearTimeout(cancelQuestion2);
 $("#rightOrWrong").html("Sorry, the right answer is Epona.");
 incorrect++;
@@ -277,17 +283,12 @@ $("#comments").html("");
   
 cancelQuestion3=  setTimeout(displayCorrectAnswerWhenIncorrect3, 25000); 
 
-
 }
-
-
-
-
 
 function displayCorrectAnswerWhenCorrect3(){
   stop();
 offClick();
-
+playSelectNoise();
 clearTimeout(cancelQuestion3);
 $("#rightOrWrong").html("You got the right answer!");
 correct++;
@@ -301,6 +302,7 @@ $("#comments").html("Just play your instrument all day long...")
 function displayCorrectAnswerWhenIncorrect3(){
   stop();
   offClick();
+  playSelectNoise();
 clearTimeout(cancelQuestion3);
 $("#rightOrWrong").html("Sorry, the right answer is Song of Storms");
 incorrect++;
@@ -337,7 +339,7 @@ cancelQuestion4=  setTimeout(displayCorrectAnswerWhenIncorrect4, 25000);
 function displayCorrectAnswerWhenCorrect4(){
   stop();
 offClick();
-
+playSelectNoise();
 clearTimeout(cancelQuestion4);
 $("#rightOrWrong").html("You got the right answer!");
 correct++;
@@ -350,6 +352,7 @@ $("#comments").html("Feel the power of the almighty sword!")
 function displayCorrectAnswerWhenIncorrect4(){
   stop();
   offClick();
+  playSelectNoise();
 clearTimeout(cancelQuestion4);
 $("#rightOrWrong").html("Sorry, the right answer is Master Sword.");
 incorrect++;
@@ -385,7 +388,7 @@ cancelQuestion5=  setTimeout(displayCorrectAnswerWhenIncorrect5, 25000);
 function displayCorrectAnswerWhenCorrect5(){
   stop()
 offClick();
-
+playSelectNoise();
 clearTimeout(cancelQuestion5);
 $("#rightOrWrong").html("You got the right answer!");
 correct++;
@@ -398,6 +401,7 @@ $("#comments").html("So mischievous!")
 function displayCorrectAnswerWhenIncorrect5(){
   stop();
   offClick();
+  playSelectNoise();
 clearTimeout(cancelQuestion5);
 $("#rightOrWrong").html("Sorry, the right answer is Midna");
 incorrect++;
@@ -432,7 +436,7 @@ cancelQuestion6=  setTimeout(displayCorrectAnswerWhenIncorrect6, 25000);
 function displayCorrectAnswerWhenCorrect6(){
   stop();
 offClick();
-
+playSelectNoise();
 clearTimeout(cancelQuestion6);
 $("#rightOrWrong").html("You got the right answer!");
 correct++;
@@ -446,6 +450,7 @@ $("#comments").html("Summon the angry moon to destroy everything!")
 function displayCorrectAnswerWhenIncorrect6(){
   stop();
 offClick();
+playSelectNoise();
 clearTimeout(cancelQuestion6);
 $("#rightOrWrong").html("Sorry, the right answer is 3 days");
 incorrect++;
@@ -481,7 +486,7 @@ cancelQuestion7=  setTimeout(displayCorrectAnswerWhenIncorrect7, 25000);
 function displayCorrectAnswerWhenCorrect7(){
   stop();
 offClick();
-
+playSelectNoise();
 clearTimeout(cancelQuestion7);
 $("#rightOrWrong").html("You got the right answer!");
 correct++;
@@ -495,6 +500,7 @@ $("#comments").html("Evil pig")
 function displayCorrectAnswerWhenIncorrect7(){
   stop();
   offClick();
+  playSelectNoise();
 clearTimeout(cancelQuestion7);
 $("#rightOrWrong").html("Sorry, the right answer is Ganondorf");
 incorrect++;
@@ -507,6 +513,7 @@ $("#comments").html("One male every 100 years within the Gerudo tribe.");
 
 function endScore(){
 stop();
+playSelectNoise();
 $("#timer").html("");
 $("#extraline").html("Correct answered: " + correct);
 $("#rightOrWrong").html("Incorrect answered: " + incorrect);
