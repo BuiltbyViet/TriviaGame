@@ -86,11 +86,17 @@ var startSound = document.createElement("audio");
 startSound.setAttribute("src", "assets/css/OOT_PressStart.mp3");
 
 
+var selectSound = document.createElement("audio");
+selectSound.setAttribute("src","assets/css/OOT_MainMenu_Select.mp3");
+$(".answer").on("click", function(){ selectSound.play();
+});
+
 //Start button
 $("#start").on("click", function(){
   displayQuestion1();
   startSound.play();
 });
+
 
 
 //counting down timer
@@ -109,6 +115,14 @@ $("#start").on("click", function(){
       }
     }
 
+    function emptyQuestionAndAnswer (){
+      $("#question").html("");
+$("#answer1").html("");
+$("#answer2").html("");
+$("#answer3").html("");
+$("#answer4").html("");
+    }
+
 //stoping timer
     function stop() {
       clearInterval(intervaldCountdown);
@@ -124,7 +138,7 @@ var nextQuestions= {
   "This powerful artifact known for a weapon that seals the darkness throughout many Legend of Zelda games.",
   "Which of these characters do not share a fragment of the Triforce?",
   "To summon the moon to destroy the world, Skull Kid needs how much time?",
-  "'He was the leader of a band of thieves who invaded Hyrule in the hopes of establishing dominion over the Sacred Realm. He was known as a demon thief, an evil-magic wielder renowned for his ruthlessness...-Ancient Sage'"  
+  "'He was the leader of a band of thieves who invaded Hyrule in the hopes of establishing dominion over the Sacred Realm. He was known as a demon thief, an evil-magic wielder renowned for his ruthlessness...'Who is this referring to?"  
   ],
     answer: [
     ["Ganondorf","Tingle","Zelda","Link"],
@@ -171,11 +185,7 @@ $("#answer4").off("click", displayCorrectAnswerWhenCorrect1);
 clearTimeout(cancelQuestion1);
 $("#rightOrWrong").html("You got the right answer!");
 correct++;
-$("#question").html("");
-  $("#answer1").html("");
-$("#answer2").html("");
-$("#answer3").html("");
-$("#answer4").html("");
+emptyQuestionAndAnswer();
 setTimeout(displayQuestion2, 5000);
 $("#images").html("<img src='assets/images/legendoflink.gif' width='260px'/>");
 $("#comments").html("Yeah. He can't talk without a helper.");
@@ -191,11 +201,7 @@ $("#answer4").off("click", displayCorrectAnswerWhenCorrect1);
 clearTimeout(cancelQuestion1);
 $("#rightOrWrong").html("Sorry, the right answer is Link.");
 incorrect++;
-$("#question").html("");
-  $("#answer1").html("");
-$("#answer2").html("");
-$("#answer3").html("");
-$("#answer4").html("");
+emptyQuestionAndAnswer();
 setTimeout(displayQuestion2, 5000);
 $("#images").html("<img src='assets/images/legendoflink.gif' width='260px'/>")
 $("#comments").html("I'm guessing you're not a fan of the series...")
@@ -234,11 +240,7 @@ $("#answer4").off("click", displayCorrectAnswerWhenCorrect2);
 clearTimeout(cancelQuestion2);
 $("#rightOrWrong").html("You got the right answer!");
 correct++;
-$("#question").html("");
-  $("#answer1").html("");
-$("#answer2").html("");
-$("#answer3").html("");
-$("#answer4").html("");
+emptyQuestionAndAnswer();
 setTimeout(displayQuestion3, 5000);
 $("#images").html("<img src='assets/images/Epona.gif' width='400px'/>");
 $("#comments").html("Run like the wind!!!!!!");
@@ -253,11 +255,7 @@ $("#answer4").off("click", displayCorrectAnswerWhenCorrect2);
 clearTimeout(cancelQuestion2);
 $("#rightOrWrong").html("Sorry, the right answer is Epona.");
 incorrect++;
-$("#question").html("");
-  $("#answer1").html("");
-$("#answer2").html("");
-$("#answer3").html("");
-$("#answer4").html("");
+emptyQuestionAndAnswer();
 setTimeout(displayQuestion3, 5000);
 $("#images").html("<img src='assets/images/Epona.gif' width='400px'/>");
 $("#comments").html("You didn't choose the pokemon right?")
@@ -301,11 +299,7 @@ $("#answer4").off("click", displayCorrectAnswerWhenIncorrect3);
 clearTimeout(cancelQuestion3);
 $("#rightOrWrong").html("You got the right answer!");
 correct++;
-$("#question").html("");
-  $("#answer1").html("");
-$("#answer2").html("");
-$("#answer3").html("");
-$("#answer4").html("");
+emptyQuestionAndAnswer();
 setTimeout(displayQuestion4, 5000);
 $("#images").html("<img src='assets/images/Guruguru.gif' width='310px'/>");
 $("#comments").html("Just play your instrument all day long...")
@@ -321,11 +315,7 @@ $("#answer4").off("click", displayCorrectAnswerWhenIncorrect3);
 clearTimeout(cancelQuestion3);
 $("#rightOrWrong").html("Sorry, the right answer is Song of Storms");
 incorrect++;
-$("#question").html("");
-  $("#answer1").html("");
-$("#answer2").html("");
-$("#answer3").html("");
-$("#answer4").html("");
+emptyQuestionAndAnswer();
 setTimeout(displayQuestion4, 5000);
 $("#images").html("<img src='assets/images/Guruguru.gif' width='310px'/>");
 $("#comments").html("great job...with getting the question incorrect");
@@ -365,11 +355,7 @@ $("#answer4").off("click", displayCorrectAnswerWhenIncorrect4);
 clearTimeout(cancelQuestion4);
 $("#rightOrWrong").html("You got the right answer!");
 correct++;
-$("#question").html("");
-  $("#answer1").html("");
-$("#answer2").html("");
-$("#answer3").html("");
-$("#answer4").html("");
+emptyQuestionAndAnswer();
 setTimeout(displayQuestion5, 5000);
 $("#images").html("<img src='assets/images/mastersword.gif' width='400px'/>");
 $("#comments").html("Feel the power of the almighty sword!")
@@ -384,11 +370,7 @@ $("#answer4").off("click", displayCorrectAnswerWhenIncorrect4);
 clearTimeout(cancelQuestion4);
 $("#rightOrWrong").html("Sorry, the right answer is Master Sword.");
 incorrect++;
-$("#question").html("");
-  $("#answer1").html("");
-$("#answer2").html("");
-$("#answer3").html("");
-$("#answer4").html("");
+emptyQuestionAndAnswer();
 setTimeout(displayQuestion5, 5000);
 $("#images").html("<img src='assets/images/mastersword.gif' width='400px'/>");
 $("#comments").html("I guess you aren't the chosen hero.")
@@ -427,11 +409,7 @@ $("#answer4").off("click", displayCorrectAnswerWhenIncorrect5);
 clearTimeout(cancelQuestion5);
 $("#rightOrWrong").html("You got the right answer!");
 correct++;
-$("#question").html("");
-  $("#answer1").html("");
-$("#answer2").html("");
-$("#answer3").html("");
-$("#answer4").html("");
+emptyQuestionAndAnswer();
 setTimeout(displayQuestion6, 5000);
 $("#images").html("<img src='assets/images/impmidna.gif' width='250px'/>");
 $("#comments").html("So mischievous!")
@@ -446,11 +424,7 @@ $("#answer4").off("click", displayCorrectAnswerWhenIncorrect5);
 clearTimeout(cancelQuestion5);
 $("#rightOrWrong").html("Sorry, the right answer is Midna");
 incorrect++;
-$("#question").html("");
-  $("#answer1").html("");
-$("#answer2").html("");
-$("#answer3").html("");
-$("#answer4").html("");
+emptyQuestionAndAnswer();
 setTimeout(displayQuestion6, 5000);
 $("#images").html("<img src='assets/images/impmidna.gif' width='250px'/>");
 $("#comments").html("The imp-like twilight princess from the shadow realm.")
@@ -488,11 +462,7 @@ $("#answer4").off("click", displayCorrectAnswerWhenCorrect6);
 clearTimeout(cancelQuestion6);
 $("#rightOrWrong").html("You got the right answer!");
 correct++;
-$("#question").html("");
-  $("#answer1").html("");
-$("#answer2").html("");
-$("#answer3").html("");
-$("#answer4").html("");
+emptyQuestionAndAnswer();
 setTimeout(displayQuestion7, 5000);
 $("#images").html("<img src='assets/images/skullkid.gif' width='400px'/>");
 $("#comments").html("Summon the angry moon to destroy everything!")
@@ -508,11 +478,7 @@ $("#answer4").off("click", displayCorrectAnswerWhenCorrect6);
 clearTimeout(cancelQuestion6);
 $("#rightOrWrong").html("Sorry, the right answer is 3 days");
 incorrect++;
-$("#question").html("");
-  $("#answer1").html("");
-$("#answer2").html("");
-$("#answer3").html("");
-$("#answer4").html("");
+emptyQuestionAndAnswer();
 setTimeout(displayQuestion7, 5000);
 $("#images").html("<img src='assets/images/skullkid.gif' width='400px'/>");
 $("#comments").html("Luckily you can manipulate time in the game.")
@@ -551,11 +517,7 @@ $("#answer4").off("click", displayCorrectAnswerWhenIncorrect7);
 clearTimeout(cancelQuestion7);
 $("#rightOrWrong").html("You got the right answer!");
 correct++;
-$("#question").html("");
-  $("#answer1").html("");
-$("#answer2").html("");
-$("#answer3").html("");
-$("#answer4").html("");
+emptyQuestionAndAnswer();
 setTimeout(endScore, 5000);
 $("#images").html("<img src='assets/images/ganondorf.gif' width='400px'/>");
 $("#comments").html("Evil pig")
@@ -571,11 +533,7 @@ $("#answer4").off("click", displayCorrectAnswerWhenIncorrect7);
 clearTimeout(cancelQuestion7);
 $("#rightOrWrong").html("Sorry, the right answer is Ganondorf");
 incorrect++;
-$("#question").html("");
-  $("#answer1").html("");
-$("#answer2").html("");
-$("#answer3").html("");
-$("#answer4").html("");
+emptyQuestionAndAnswer();
 setTimeout(endScore, 5000);
 $("#images").html("<img src='assets/images/ganondorf.gif' width='400px'/>");
 $("#comments").html("One male every 100 years within the Gerudo tribe.");
