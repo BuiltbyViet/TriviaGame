@@ -49,6 +49,10 @@ var audiosounds = document.createElement("audio");
         audiosounds4.pause();
       });
 
+      $("#pause").on("click", function() {
+        audiosounds5.pause();
+      });
+
 
 var audiosounds2 = document.createElement("audio");
       audiosounds2.setAttribute("src", "assets/css/04-gerudo-valley.mp3");
@@ -73,11 +77,20 @@ var audiosounds3 = document.createElement("audio");
 
 var audiosounds4 = document.createElement("audio");
       audiosounds4.setAttribute("src", "assets/css/57-windmill-hut.mp3");
+
+// Theme Button
+      $("#play4").on("click", function() {
+        audiosounds4.play();
+      });
+
+
+var audiosounds5 = document.createElement("audio");
+      audiosounds5.setAttribute("src", "assets/css/35-lost-woods.mp3");
       
 
       // Theme Button
-      $("#play4").on("click", function() {
-        audiosounds4.play();
+      $("#play5").on("click", function() {
+        audiosounds5.play();
       });
 
       
