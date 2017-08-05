@@ -13,16 +13,7 @@ var cancelQuestion5;
 var cancelQuestion6;
 var cancelQuestion7;
 //game start
-function reset(){
-timer=25;
-correct=0;
-incorrect=0;
-$("#rightOrWrong").html("");
-$("#answer4").off("click", displayQuestion1);
-$("#extraline").html("");
-$("#comments").html("");
 
-}
 
 var audiosounds = document.createElement("audio");
       audiosounds.setAttribute("src", "assets/css/2-09-main-theme-underworld-theme.mp3");
@@ -35,24 +26,11 @@ var audiosounds = document.createElement("audio");
 
       $("#pause").on("click", function() {
         audiosounds.pause();
-      });
-
-      $("#pause").on("click", function() {
         audiosounds2.pause();
-      });
-
-      $("#pause").on("click", function() {
         audiosounds3.pause();
-      });
-
-      $("#pause").on("click", function() {
         audiosounds4.pause();
-      });
-
-      $("#pause").on("click", function() {
         audiosounds5.pause();
       });
-
 
 var audiosounds2 = document.createElement("audio");
       audiosounds2.setAttribute("src", "assets/css/04-gerudo-valley.mp3");
@@ -110,7 +88,23 @@ $("#start").on("click", function(){
   startSound.play();
 });
 
+function offClick(){
+  $("#answer1").off()
+$("#answer2").off()
+$("#answer3").off()
+$("#answer4").off()
+};
 
+function reset(){
+timer=25;
+correct=0;
+incorrect=0;
+$("#rightOrWrong").html("");
+offClick();
+$("#extraline").html("");
+$("#comments").html("");
+
+}
 
 //counting down timer
     function countdown() {
@@ -191,10 +185,7 @@ cancelQuestion1=  setTimeout(displayCorrectAnswerWhenIncorrect1, 25000);
 
 function displayCorrectAnswerWhenCorrect1(){
   stop();
-$("#answer1").off("click", displayCorrectAnswerWhenIncorrect1);
-$("#answer2").off("click", displayCorrectAnswerWhenIncorrect1);
-$("#answer3").off("click", displayCorrectAnswerWhenIncorrect1);
-$("#answer4").off("click", displayCorrectAnswerWhenCorrect1);
+offClick();
 clearTimeout(cancelQuestion1);
 $("#rightOrWrong").html("You got the right answer!");
 correct++;
@@ -207,10 +198,7 @@ $("#comments").html("Yeah. He can't talk without a helper.");
 
 function displayCorrectAnswerWhenIncorrect1(){
   stop();
-$("#answer1").off("click", displayCorrectAnswerWhenIncorrect1);
-$("#answer2").off("click", displayCorrectAnswerWhenIncorrect1);
-$("#answer3").off("click", displayCorrectAnswerWhenIncorrect1);
-$("#answer4").off("click", displayCorrectAnswerWhenCorrect1);
+offClick();
 clearTimeout(cancelQuestion1);
 $("#rightOrWrong").html("Sorry, the right answer is Link.");
 incorrect++;
@@ -245,10 +233,7 @@ cancelQuestion2=  setTimeout(displayCorrectAnswerWhenIncorrect2, 25000);
 
 function displayCorrectAnswerWhenCorrect2(){
   stop();
-$("#answer1").off("click", displayCorrectAnswerWhenIncorrect2);
-$("#answer2").off("click", displayCorrectAnswerWhenIncorrect2);
-$("#answer3").off("click", displayCorrectAnswerWhenIncorrect2);
-$("#answer4").off("click", displayCorrectAnswerWhenCorrect2);
+offClick();
 
 clearTimeout(cancelQuestion2);
 $("#rightOrWrong").html("You got the right answer!");
@@ -261,10 +246,7 @@ $("#comments").html("Run like the wind!!!!!!");
 
 function displayCorrectAnswerWhenIncorrect2(){
   stop();
-  $("#answer1").off("click", displayCorrectAnswerWhenIncorrect2);
-$("#answer2").off("click", displayCorrectAnswerWhenIncorrect2);
-$("#answer3").off("click", displayCorrectAnswerWhenIncorrect2);
-$("#answer4").off("click", displayCorrectAnswerWhenCorrect2);
+  offClick();
 clearTimeout(cancelQuestion2);
 $("#rightOrWrong").html("Sorry, the right answer is Epona.");
 incorrect++;
@@ -304,10 +286,7 @@ cancelQuestion3=  setTimeout(displayCorrectAnswerWhenIncorrect3, 25000);
 
 function displayCorrectAnswerWhenCorrect3(){
   stop();
-$("#answer1").off("click", displayCorrectAnswerWhenIncorrect3);
-$("#answer2").off("click", displayCorrectAnswerWhenIncorrect3);
-$("#answer3").off("click", displayCorrectAnswerWhenCorrect3);
-$("#answer4").off("click", displayCorrectAnswerWhenIncorrect3);
+offClick();
 
 clearTimeout(cancelQuestion3);
 $("#rightOrWrong").html("You got the right answer!");
@@ -321,10 +300,7 @@ $("#comments").html("Just play your instrument all day long...")
 
 function displayCorrectAnswerWhenIncorrect3(){
   stop();
-  $("#answer1").off("click", displayCorrectAnswerWhenIncorrect3);
-$("#answer2").off("click", displayCorrectAnswerWhenIncorrect3);
-$("#answer3").off("click", displayCorrectAnswerWhenCorrect3);
-$("#answer4").off("click", displayCorrectAnswerWhenIncorrect3);
+  offClick();
 clearTimeout(cancelQuestion3);
 $("#rightOrWrong").html("Sorry, the right answer is Song of Storms");
 incorrect++;
@@ -360,10 +336,7 @@ cancelQuestion4=  setTimeout(displayCorrectAnswerWhenIncorrect4, 25000);
 
 function displayCorrectAnswerWhenCorrect4(){
   stop();
-$("#answer1").off("click", displayCorrectAnswerWhenCorrect4);
-$("#answer2").off("click", displayCorrectAnswerWhenIncorrect4);
-$("#answer3").off("click", displayCorrectAnswerWhenIncorrect4);
-$("#answer4").off("click", displayCorrectAnswerWhenIncorrect4);
+offClick();
 
 clearTimeout(cancelQuestion4);
 $("#rightOrWrong").html("You got the right answer!");
@@ -376,10 +349,7 @@ $("#comments").html("Feel the power of the almighty sword!")
 
 function displayCorrectAnswerWhenIncorrect4(){
   stop();
-  $("#answer1").off("click", displayCorrectAnswerWhenCorrect4);
-$("#answer2").off("click", displayCorrectAnswerWhenIncorrect4);
-$("#answer3").off("click", displayCorrectAnswerWhenIncorrect4);
-$("#answer4").off("click", displayCorrectAnswerWhenIncorrect4);
+  offClick();
 clearTimeout(cancelQuestion4);
 $("#rightOrWrong").html("Sorry, the right answer is Master Sword.");
 incorrect++;
@@ -414,10 +384,7 @@ cancelQuestion5=  setTimeout(displayCorrectAnswerWhenIncorrect5, 25000);
 
 function displayCorrectAnswerWhenCorrect5(){
   stop()
-$("#answer1").off("click", displayCorrectAnswerWhenIncorrect5);
-$("#answer2").off("click", displayCorrectAnswerWhenCorrect5);
-$("#answer3").off("click", displayCorrectAnswerWhenIncorrect5);
-$("#answer4").off("click", displayCorrectAnswerWhenIncorrect5);
+offClick();
 
 clearTimeout(cancelQuestion5);
 $("#rightOrWrong").html("You got the right answer!");
@@ -430,10 +397,7 @@ $("#comments").html("So mischievous!")
 
 function displayCorrectAnswerWhenIncorrect5(){
   stop();
-  $("#answer1").off("click", displayCorrectAnswerWhenIncorrect5);
-$("#answer2").off("click", displayCorrectAnswerWhenCorrect5);
-$("#answer3").off("click", displayCorrectAnswerWhenIncorrect5);
-$("#answer4").off("click", displayCorrectAnswerWhenIncorrect5);
+  offClick();
 clearTimeout(cancelQuestion5);
 $("#rightOrWrong").html("Sorry, the right answer is Midna");
 incorrect++;
@@ -467,10 +431,7 @@ cancelQuestion6=  setTimeout(displayCorrectAnswerWhenIncorrect6, 25000);
 
 function displayCorrectAnswerWhenCorrect6(){
   stop();
-$("#answer1").off("click", displayCorrectAnswerWhenIncorrect6);
-$("#answer2").off("click", displayCorrectAnswerWhenIncorrect6);
-$("#answer3").off("click", displayCorrectAnswerWhenIncorrect6);
-$("#answer4").off("click", displayCorrectAnswerWhenCorrect6);
+offClick();
 
 clearTimeout(cancelQuestion6);
 $("#rightOrWrong").html("You got the right answer!");
@@ -484,10 +445,7 @@ $("#comments").html("Summon the angry moon to destroy everything!")
 
 function displayCorrectAnswerWhenIncorrect6(){
   stop();
-  $("#answer1").off("click", displayCorrectAnswerWhenIncorrect6);
-$("#answer2").off("click", displayCorrectAnswerWhenIncorrect6);
-$("#answer3").off("click", displayCorrectAnswerWhenIncorrect6);
-$("#answer4").off("click", displayCorrectAnswerWhenCorrect6);
+offClick();
 clearTimeout(cancelQuestion6);
 $("#rightOrWrong").html("Sorry, the right answer is 3 days");
 incorrect++;
@@ -522,10 +480,7 @@ cancelQuestion7=  setTimeout(displayCorrectAnswerWhenIncorrect7, 25000);
 
 function displayCorrectAnswerWhenCorrect7(){
   stop();
-$("#answer1").off("click", displayCorrectAnswerWhenIncorrect7);
-$("#answer2").off("click", displayCorrectAnswerWhenIncorrect7);
-$("#answer3").off("click", displayCorrectAnswerWhenCorrect7);
-$("#answer4").off("click", displayCorrectAnswerWhenIncorrect7);
+offClick();
 
 clearTimeout(cancelQuestion7);
 $("#rightOrWrong").html("You got the right answer!");
@@ -539,10 +494,7 @@ $("#comments").html("Evil pig")
 
 function displayCorrectAnswerWhenIncorrect7(){
   stop();
-  $("#answer1").off("click", displayCorrectAnswerWhenIncorrect7);
-$("#answer2").off("click", displayCorrectAnswerWhenIncorrect7);
-$("#answer3").off("click", displayCorrectAnswerWhenCorrect7);
-$("#answer4").off("click", displayCorrectAnswerWhenIncorrect7);
+  offClick();
 clearTimeout(cancelQuestion7);
 $("#rightOrWrong").html("Sorry, the right answer is Ganondorf");
 incorrect++;
